@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Epoch Converter</string>
+    <string name="action_settings">Settings</string>
+    <string name="tvEpochSeconds">Enter Number Of Epoch Seconds To Convert:</string>
+    <string name="etEpochSeconds">1092941466</string>
+    <string name="tvConvertedDateText">Converted Date:</string>
+    <string name="tvConvertedDateResult"></string>
+     <string name="tvCurrentEpochText">Current Time Of Day in Epoch Seconds (UTC):</string>
+    <string name="tvCurrentEpochResult"></string>
+    <string name="bConvertTime">Convert</string>
+    
+</resources>

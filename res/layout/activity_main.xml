@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000" >
+
+    <LinearLayout
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvEpochSeconds"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:paddingBottom="5dp"
+            android:text="@string/tvEpochSeconds"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/etEpochSeconds"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:background="@drawable/chromebutton"
+            android:hint="@string/etEpochSeconds"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:textColor="#000"
+            android:textSize="20sp" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/tvConvertedDateText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:paddingBottom="5dp"
+            android:paddingTop="25dp"
+            android:text="@string/tvConvertedDateText"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvConvertedDateResult"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:background="@drawable/chromebutton"
+            android:text="@string/tvConvertedDateResult"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvPadding1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="35dp"
+            android:paddingTop="35dp"
+            android:textColor="#FFF"
+            android:textIsSelectable="false"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tvCurrentEpochText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:paddingBottom="5dp"
+            android:paddingTop="25dp"
+            android:text="@string/tvCurrentEpochText"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvCurrentEpochResult"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:background="@drawable/chromebutton"
+            android:text="@string/tvCurrentEpochResult"
+            android:textColor="#000"
+            android:textIsSelectable="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvPadding2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="35dp"
+            android:paddingTop="35dp"
+            android:textColor="#FFF"
+            android:textIsSelectable="false"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/bConvertTime"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/chromebutton"
+            android:text="@string/bConvertTime"
+            android:textColor="#000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</ScrollView>
