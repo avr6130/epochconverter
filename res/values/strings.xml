@@ -4,11 +4,15 @@
     <string name="app_name">Epoch Converter</string>
     <string name="action_settings">Settings</string>
     <string name="tvEpochSeconds">Enter Number Of Epoch Seconds To Convert:</string>
-    <string name="etEpochSeconds">1092941466</string>
-    <string name="tvConvertedDateText">Converted Date:</string>
-    <string name="tvConvertedDateResult"></string>
-     <string name="tvCurrentEpochText">Current Time Of Day in Epoch Seconds (UTC):</string>
-    <string name="tvCurrentEpochResult"></string>
-    <string name="bConvertTime">Convert</string>
-    
+    <string name="etEpochSecondsToConvert"></string>
+    <string name="tvConvertedUTCDateText">Converted Date (UTC):</string>
+    <string name="tvConvertedLocalDateText">Converted Date (Local):</string>
+    <string name="tvConvertedUTCDateResult"></string>
+    <string name="tvConvertedLocalDateResult"></string>
+    <string name="tvCurrentTimeOfDayText">Current Time Of Day</string>
+    <string name="tvCurrentEpochSecondsText">Seconds (UTC):</string>
+    <string name="tvCurrentEpochUTCDateText">Date (UTC):</string>
+    <string name="tvCurrentEpochLocalDateText">Date (Local Time):</string>
+    <string name="bConvertTime">Get Time</string>
+
 </resources>
