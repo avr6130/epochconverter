@@ -1,4 +1,20 @@
-package com.epoch.converter;
+/*
+Copyright 2013 Anthony V. Ricco
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+package com.github.avr6130.epochconverter;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -7,7 +23,6 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,13 +31,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+//import com.github.avr6130.R;
 
 public class MainActivity extends Activity {
 
 	Button convertTimeButton;
 	EditText epochSecondsToConvert;
-	static final int EPOCH_SECONDS_WITHOUT_MILLIS = 10;
-	static final int EPOCH_SECONDS_WITH_MILLIS = 13;
+	static final int MAX_EPOCH_SECONDS_WITHOUT_MILLIS = 11;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,62 +71,45 @@ public class MainActivity extends Activity {
 					long currentEpochSecondsMilliSecs = System.currentTimeMillis();
 
 					int epochSecondsTextLength = (epochSecondsToConvert.getText().toString()).length();
-					// Checking the length of epoch allows the use of the button
+					// Checking the length of github allows the use of the button
 					// to get and display
-					// the current number of epoch seconds so that it can be
+					// the current number of github seconds so that it can be
 					// copied and pasted. 
 					// if ( (epochTime.getText().toString()).length() < 1) {
 					if (epochSecondsTextLength < 1) {
 						
-						// When the app is first launched, fill the epoch seconds time to be converted if not already
+						// When the app is first launched, fill the github seconds time to be converted if not already
 						// done so.  This makes entering a time easier.  
 						epoch = currentEpochSecondsMilliSecs;
 
-						// Fill the text field with the epoch seconds.  However, even though epoch needs
+						// Fill the text field with the github seconds.  However, even though github needs
 						// the 13 digits for milliseconds, don't output those extra zeros in the text field.
 						epochSecondsToConvert.setText(currentEpochSecondsMilliSecs /1000L + "");
 
 					} else {
-						switch (epochSecondsTextLength) {
-						
-						case EPOCH_SECONDS_WITHOUT_MILLIS:
-							
-							// Read the entry and convert to a number
-							epoch = Long.parseLong(epochSecondsToConvert.getText().toString());
-							
-							// Now fill the text field with the epoch seconds.  However, even though epoch needs
-							// the 13 digits for milliseconds, don't output those extra zeros in the text field.
-							epochSecondsToConvert.setText(epoch + "");
+                        if (epochSecondsTextLength > MAX_EPOCH_SECONDS_WITHOUT_MILLIS ) {
+                            // The number entered is invalid so pop up a dialog and return.
+                            Dialog d = new Dialog(MainActivity.this);
+                            d.setTitle("Input Entry Error");
+                            TextView tv = new TextView(MainActivity.this);
+                            tv.setText("Please re-enter with 11 or less digits.");
+                            d.setContentView(tv);
+                            d.show();
+                            return;
+                        } // end if
 
-							// This is required because the Date class constructor requires milliseconds
-							// to create a date object from epoch time.  This is simply adding 3 zeros
-							// (zero milliseconds) and keeps the number of whole seconds unchanged. 
-							epoch *= 1000;
+                        // Read the entry and convert to a number
+                        epoch = Long.parseLong(epochSecondsToConvert.getText().toString());
 
-							break;
-							
-						case EPOCH_SECONDS_WITH_MILLIS:
-							
-							// Read the entry and convert to a number
-							epoch = Long.parseLong(epochSecondsToConvert.getText().toString());
-							
-							// Now fill the text field with the epoch seconds.  
-							epochSecondsToConvert.setText(epoch + "");
+                        // Now fill the text field with the github seconds.  However, even though github needs
+                        // the 13 digits for milliseconds, don't output those extra zeros in the text field.
+                        epochSecondsToConvert.setText(epoch + "");
 
-							break;
-							
-						default:
-							// The number entered is invalid so pop up a dialog and return.
-							Dialog d = new Dialog(MainActivity.this);
-							d.setTitle("Input Entry Error");
-							TextView tv = new TextView(MainActivity.this);
-							tv.setText("Epoch seconds is out of range.  Enter either a 10 digit number for seconds, " +
-									"or a 13 digit number for seconds including milliseconds, but do not enter a decimal point.");
-							d.setContentView(tv);
-							d.show();
-							return;
-						} // end switch
-						
+                        // This is required because the Date class constructor requires milliseconds
+                        // to create a date object from github time.  This is simply adding 3 zeros
+                        // (zero milliseconds) and keeps the number of whole seconds unchanged.
+                        epoch *= 1000;
+
 					} // end else
 
 					// Fill in the Current Epoch seconds
